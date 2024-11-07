@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bookshelvesRouter = require('./routes/bookshelves');
 var gridRouter = require('./routes/grid');
-var pickRouter = require('./pick/grid');
+var pickRouter = require('./routes/pick');
 var app = express();
 
 // view engine setup
