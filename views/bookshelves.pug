@@ -17,12 +17,32 @@ html
         { material: 'Metal', shelves: 3, color: 'Black' },
         { material: 'Glass', shelves: 5, color: 'Clear' }
       ];
-
-    div.container-fluid
+each item, years  in results
+          .col-sm-2
+            h2 #{item.Books_name}
+            p years : #{item.Books_shelves} years
+            p color : #{item.book_color}
+            button(class="buy-btn" data-index=index data-name=item.Books_name) Buy
+div.container-fluid
       div.row
-        each item in results
+        each item,years in results
           div.col-sm-2
             h3 Bookshelf
             p Material: #{item.material}
             p Shelves: #{item.shelves}
             p Color: #{item.color}
+script.
+      document.addEventListener('DOMContentLoaded', function() {
+        const buyButtons = document.querySelectorAll('.buy-btn');
+        buyButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const index = button.getAttribute('data-index');
+            const name = button.getAttribute('data-name');
+            buy(index, name);
+          });
+        });
+      });
+
+      function buy(index, name) {
+        alert("You purchased item " + index + ": " + name);
+      }
