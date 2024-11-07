@@ -9,23 +9,5 @@ html
 
   body
     h1 Welcome to My Server Page
-    p This is a sample server page with a button and JavaScript functionality.
-
-    //- Button with Boost functionality
-    button(type="button", class="btn btn-secondary", onclick="boost()") Sample Button
-
-    //- Div to display the Boost results
-    div#boost add in extra
-
-    //- JavaScript to implement the boost functionality
-    script.
-      let value = 0;
-      let amt = 3;
-
-      function boost() {
-        amt += 1;
-        value += amt;
-        document.getElementById("boost").innerText = `Boosted ${value} by ${amt}`;
-      }
     a(href="/bookshelves") View Bookshelves Search Results
 
